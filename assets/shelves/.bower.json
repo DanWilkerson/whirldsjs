@@ -1,0 +1,27 @@
+{
+  "name": "shelves",
+  "version": "1.0.3",
+  "main": [
+    "css/shelves.css",
+    "scss/shelves.scss"
+  ],
+  "ignore": [
+    "*.gemspec",
+    "bin",
+    "lib",
+    "Gemfile",
+    "Gemfile.lock",
+    "Rakefile"
+  ],
+  "homepage": "https://github.com/whoisartifex/shelves",
+  "_release": "1.0.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.3",
+    "commit": "26359e27173af7eba718e136707dfa6c282249fe"
+  },
+  "_source": "git://github.com/whoisartifex/shelves.git",
+  "_target": "~1.0.3",
+  "_originalSource": "shelves",
+  "_direct": true
+}
