@@ -1,1 +1,8 @@
-<h1>{{title}}</h1>
+<body ng-app='whirldsJs'>
+  <div class='row' ng-controller='mainController'>
+    <div data-google-map=true data-map-center='{{map.center}}' data-map-zoom='{{map.zoom}}' data-map- class='column-11'>
+      <div data-google-map-marker=true data-marker-options='{{map.marker.options}}' data-marker-location='{{map.marker.location}}' data-marker-type='{{map.marker.type}}' data-marker-id='{{map.marker.id}}'>{{map}}</div>
+      <div data-google-map-circle=true data-circle-center='{{map.circle.center}}' data-circle-color='{{map.circle.color}}'></div>
+    </div>
+  </div>  
+</body
