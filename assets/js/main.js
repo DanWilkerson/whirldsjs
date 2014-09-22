@@ -1,5 +1,10 @@
 var whirldsJs = angular.module( 'whirldsJs', [] );
 
+whirldsJs.config(function($interpolateProvider) {
+  // $scope property interpolation
+  $interpolateProvider.startSymbol('{[{').endSymbol('}]}');
+});
+
 whirldsJs.controller( 'mainController', [ '$scope', function( $scope ) {
 
   console.log($scope);
