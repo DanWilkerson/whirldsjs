@@ -2,16 +2,23 @@ var whirldsJs = angular.module( 'whirldsJs', [] );
 
 whirldsJs.controller( 'mainController', [ '$scope', function( $scope ) {
 
+  console.log($scope);
+
+  $scope.test = 'test';
+
   $scope.map = {
 
+    zoom: "1"
 
   }
-  
+
+
+
 }]);
 
 /**
- * Returns a JSON object from freegeoip.net incuding Latitude and Longitudal
- * coordinates, based on IP address.
+ * Returns a promise for a JSON object from freegeoip.net with data
+ * about a users location, based on their IP address.
 **/
 whirldsJs.factory( 'getUserLocationData', [ '$http', function( $http ) { 
 
@@ -32,11 +39,11 @@ whirldsJs.factory( 'getUserLocationData', [ '$http', function( $http ) {
 **/
 whirldsJs.directive('googleMap', ['getUserLocationData', function( getUserLocationData ) {
 
-  function link( scope, element, attrs) {
+  function link( scope, element, attrs ) {
 
-    if( attrs.center ) {
+    if( attrs.mapCenter && attrs.mapCenter !== '' ) {
 
-      scope.center = '=map-center';
+      scope.map.center = '=mapCenter';
 
     } else {
 
@@ -45,13 +52,15 @@ whirldsJs.directive('googleMap', ['getUserLocationData', function( getUserLocati
 
         function ( response ){ 
 
-          scope.center = response.data.latitude + ',' + response.data.longitude;
-          
+          scope.map.center = response.data.latitude + ',' + response.data.longitude;
+          console.log(scope);
+
         },
 
         function(){
 
-          scope.center = '37.795,122.40282';
+          scope.map.center = '37.795,122.40282';
+          console.log( scope );
 
         }
 
@@ -67,4 +76,8 @@ whirldsJs.directive('googleMap', ['getUserLocationData', function( getUserLocati
 
   }
 
-}]);
+} ] );
+
+whirldsJs.directive('test', function() {
+  return {template:'<div>{{test}}</div>'};
+})
