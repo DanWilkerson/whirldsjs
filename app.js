@@ -1,7 +1,6 @@
 var express = require('express');
 var app = express();
 var path = require('path');
-var expressHbs = require('express-handlebars');
 
 app.use('/assets', express.static( __dirname + '/assets' ));
 
