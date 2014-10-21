@@ -1,6 +1,6 @@
 var whirldsJs = angular.module( 'whirldsJs', [] );
 
-whirldsJs.controller( 'mainController', [ '$scope', function( $scope ) {
+whirldsJs.controller( 'mainController', [ 'whirldsBuilder', '$scope', function( whirldsBuilder, $scope ) {
 
   $scope.map = {};
 
@@ -38,7 +38,6 @@ whirldsJs.controller( 'mainController', [ '$scope', function( $scope ) {
 
       $scope.map.circle.center  = event.latLng;
       var circle                = new google.maps.Circle( $scope.map.circle );
-
       $scope.map.circle.binding = circle;
 
       circle.setMap( this );
