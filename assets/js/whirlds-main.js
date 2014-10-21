@@ -34,23 +34,20 @@ whirldsJs.controller( 'mainController', [ '$scope', function( $scope ) {
 
     click: function( event ) {
 
-      console.log( this );
+      if( $scope.map.circle.binding ) { $scope.map.circle.binding.setMap( null )};
 
-      if( this.j.circle ) { this.j.circle.setMap( null )};
+      $scope.map.circle.center  = event.latLng;
+      var circle                = new google.maps.Circle( $scope.map.circle );
 
-      $scope.map.circle.center = event.latLng;
-      $scope.map.circle.map = this.j;
-      var circle = new google.maps.Circle( $scope.map.circle );
+      $scope.map.circle.binding = circle;
 
-
-      console.log(circle);
+      circle.setMap( this );
 
       google.maps.event.addListener( circle, 'radius_changed', function() {
 
         whirldsBuilder.setWhirldsRadius( circle.radius );
-        console.log( circle );
 
-      });
+      } );
 
     }
 
