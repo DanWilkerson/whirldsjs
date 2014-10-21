@@ -1,17 +1,25 @@
 <!DOCTYPE html>
   <head>
+
+    <script type="text/javascript" src="/assets/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="/assets/angular/angular.min.js"></script>
-    <!--<script type="text/javascript" src="/assets/jquery/dist/jquery.min.js"></script>-->
     <link rel="stylesheet" href="/assets/shelves/css/shelves.css" />
-    <script type="text/javascript" src="/assets/js/main.js"></script>
+    <script type="text/javascript" src="/assets/js/whirlds-main.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.14&key=AIzaSyBjuCD0AeIVgL0d13DB0H3m8oySClh4x_A"></script>
+
   </head>
   <body ng-app='whirldsJs'>
+
     <div class='row' ng-controller='mainController'>
-      <div ng-model="map" data-google-map=true data-map-center='{{center}}' data-map-zoom='{{zoom}}' class='column-11'>
-        <div data-google-map-marker=true data-marker-options='{{map.marker.options}}' data-marker-location='{{map.marker.location}}' data-marker-type='{{map.marker.type}}' data-marker-id='{{map.marker.id}}'>{{map}}</div>
-        <div data-google-map-circle=true data-circle-center='{{map.circle.center}}' data-circle-color='{{map.circle.color}}'></div>
+
+      <div class='column-11' style='height:300px'>
+
+        <google-map zoom="$scope.map.zoom" events="scope.map.events" options="scope.map"></google-map>
+  
       </div>
+
     </div> 
+
   </body>
 
 </html>

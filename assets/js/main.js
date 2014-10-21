@@ -2,9 +2,11 @@ var whirldsJs = angular.module( 'whirldsJs', [] );
 
 whirldsJs.controller( 'mainController', [ '$scope', function( $scope ) {
 
+  console.log('yes')
+
   $scope.map = {
 
-    zoom: "1",
+    //zoom: "1",
     mapTypeControl: false,
     styles: [{
       featureType: 'poi',
@@ -12,7 +14,7 @@ whirldsJs.controller( 'mainController', [ '$scope', function( $scope ) {
         visibility: 'off'
       }]
     }],
-    mapDivId: 'map'
+    id: 'map'
 
   }
 
@@ -90,18 +92,26 @@ whirldsJs.directive('googleMap', ['getUserLocationData', function( getUserLocati
 
     }
 
-    if ( typeof attrs.mapZoom === 'undefined' || typeof scope.map.zoom === 'undefined' ) {
+    if( !scope.map.zoom ) {
 
-      scope.map.zoom = 13
+      scope.map.zoom = 13;
 
     }
+
+    console.log(attrs);
+
+    var map = new google.maps.Map( element.map, scope.map);
 
   }
 
   return {
 
+    restrict: 'EAC',
+
     link: link,
-    
+
+    templateUrl: '/assets/views/partials/googleMap.html'
+
   }
 
 } ] );
