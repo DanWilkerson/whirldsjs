@@ -1,25 +1,33 @@
 <!DOCTYPE html>
-  <head>
-
-    <script type="text/javascript" src="/assets/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="/assets/angular/angular.min.js"></script>
-    <link rel="stylesheet" href="/assets/shelves/css/shelves.css" />
-    <script type="text/javascript" src="/assets/js/whirlds-main.js"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.14&key=AIzaSyBjuCD0AeIVgL0d13DB0H3m8oySClh4x_A"></script>
-
-  </head>
-  <body ng-app='whirldsJs'>
-
-    <div class='row' ng-controller='mainController'>
-
-      <div class='column-11' style='height:300px'>
-
-        <google-map zoom="$scope.map.zoom" events="scope.map.events" options="scope.map"></google-map>
+  <html ng-app='whirldsJs'>
   
-      </div>
+    <head>
 
-    </div> 
+      <meta name="viewport" content="width=device-width initial-scale=1.0 user-scalable=no">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="apple-mobile-web-app-status-bar-style" content="none">
+      <meta charset="utf-8">
 
-  </body>
+      <script type="text/javascript" src="/assets/jquery/dist/jquery.min.js"></script>
+      <script type="text/javascript" src="/assets/angular/angular.min.js"></script>
+      <script type="text/javascript" src="/assets/angular-route/angular-route.min.js"></script>
+      <script type="text/javascript" src="/assets/js/whirlds-main.js"></script>
+      <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.14&key=AIzaSyBjuCD0AeIVgL0d13DB0H3m8oySClh4x_A&libraries=geometry"></script>
 
-</html>
+      <style>
+
+        .start-button {
+
+          position: absolute;
+          bottom: 20%;
+          left: 50%;
+
+        }
+
+      </style>
+
+    </head>
+
+    <body ng-view=""></body>
+
+  </html>

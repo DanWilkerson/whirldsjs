@@ -1,0 +1,11 @@
+<div class='row' ng-controller='selectCoordsController'>
+
+  <div class='column-12' style='height:600px'>
+
+    <google-map></google-map>
+
+  </div>
+  <div class='wjs-start-button-container' ng-show='url.lat > 1'>
+    <a class='wjs-start-button' ng-href='#/whirld/{{url.lat}},{{url.lng}}/{{url.radius}}'>Start</a>
+  </div>
+</div> 
