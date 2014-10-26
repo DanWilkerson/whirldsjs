@@ -93,7 +93,7 @@ h2 {
 
 }
 
-.button:hover, a:hover {
+.button:hover, a:hover, .social-share:hover {
 
   border-color: #FF8CFF;
   background-color: rgba(255,140,255,0.25);
@@ -144,4 +144,11 @@ h2 {
 
   font-size: 9px;
   color: #c5c5c5;
+}
+
+.social-share {
+
+  width: 35px;
+  margin: 1px;
+
 }

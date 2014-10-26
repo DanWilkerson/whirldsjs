@@ -112,6 +112,9 @@ whirldsJs.controller( 'viewWhirldController', [ 'degrees', '$scope', '$routePara
   $scope.radius        = $routeParams.radius;
   $scope.degrees       = degrees;
 
+  $scope.fbUrl         = "https://www.facebook.com/sharer/sharer.php?u=" + escape( window.location.protocol + "//" +  window.location.hostname + "?utm_source=facebook&utm_medium=share-button" + window.location.hash );
+  $scope.twUrl         = "https://twitter.com/intent/tweet?text=I%20just%20explored%20a%20new%20part%20of%20the%20world%20using%20Whirlds&url=" + escape( window.location.protocol + "//" + window.location.hostname + "?utm_source=twitter&utm_medium=share-button" + window.location.hash );
+
 } ] );
 
 // FACTORIES
@@ -307,3 +310,11 @@ whirldsJs.directive( 'whirld', [ 'degrees', 'getCircleLatLng', '$interval', func
   }
 
 } ] );
+
+// FILTERS
+
+whirldsJs.filter( 'escape', function() {
+
+  return window.escape;
+
+});

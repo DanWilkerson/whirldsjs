@@ -4,7 +4,7 @@
 
     <span class='text-logo'>
 
-      whirlds
+      <a href="#/">whirlds</a>
 
     </span>
 
@@ -14,9 +14,21 @@
 
     <div ng-repeat="image in images" ng-show="image.visible" class='whirld-image-container'>
 
-      <img class='whirld-image' ng-src="{{image.src}}" />
+      <!-- <img class='whirld-image' ng-src="{{image.src}}" /> -->
 
     </div>
+
+  </div>
+
+  <div class="row text-center">
+
+    Share this:
+
+  </div>
+  <div class="row text-center">
+
+    <a ng-href="{{fbUrl}}"><img class="social-share" src="/assets/img/facebook.png"></a>
+    <a ng-href="{{twUrl}}"><img class="social-share" src="/assets/img/twitter.png"></a>
 
   </div>
 
