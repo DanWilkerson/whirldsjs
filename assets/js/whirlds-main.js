@@ -31,13 +31,7 @@ whirldsJs.config( ['$routeProvider', '$sceDelegateProvider', function( $routePro
 
 whirldsJs.controller( 'selectCoordsController', [ 'getCircleLatLng', '$scope', function( getCircleLatLng, $scope ) {
 
-  $scope.url = {
-
-    lat   : 1,
-    lng   : 1,
-    radius: 1
-
-  }
+  $scope.url = {};
 
   $scope.map = {
 

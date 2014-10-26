@@ -1,4 +1,4 @@
-<div ng-controller="selectCoordsController" style="position:absolute;top:0px;left:0px;right:0px;bottom:0px;">
+<div ng-controller="selectCoordsController">
 
   <div class='row text-center'>
 
@@ -20,15 +20,18 @@
   
   </div>
 
-  <div class="button-container" ng-show="url.lat > 1">
+  <div class="button-container" >
 
-    <a class="button" ng-href="#/whirld/{{url.lat}},{{url.lng}}/{{url.radius}}">Start</a>
+    <a class="button" ng-show="url.lat > 1" ng-href="#/whirld/{{url.lat}},{{url.lng}}/{{url.radius}}">Start</a>
+    <span class="button" style="border: none" ng-hide="url.lat > 1">Select a point on the map.</span>
 
   </div>
 
   <div class='row text-center footer-links'>
 
-    By <a href="http://www.danwilkerson.com">Dan Wilkerson</a> with patient guidance and advice from <a href="https://twitter.com/tbloncar">Travis Loncar</a>
+    By <a href="http://www.danwilkerson.com">Dan Wilkerson</a> with patient guidance, help, & advice from <a href="https://twitter.com/tbloncar">Travis Loncar</a>.
+    <br><br>
+    <a href='mailto:notdanwilkerson@gmail.com'>Contact Dan</a>.
 
   </div>
 
