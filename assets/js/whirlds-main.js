@@ -1,6 +1,6 @@
 var whirldsJs = angular.module( 'whirldsJs', [ 'ngRoute' ] );
 
-whirldsJs.constant( 'degrees', 60 );
+whirldsJs.constant( 'degrees', 45 );
 
 whirldsJs.config( ['$routeProvider', '$sceDelegateProvider', function( $routeProvider, $sceDelegateProvider ) {
 
@@ -276,7 +276,7 @@ whirldsJs.directive( 'whirld', [ 'degrees', 'getCircleLatLng', '$interval', func
 
       }
 
-      var latLngs = getCircleLatLng( centerLatLngObj, scope.radius, scope.degrees );
+      var latLngs = getCircleLatLng( centerLatLngObj, scope.radius, degrees );
 
       for( var i = 0; i < scope.degrees; i++ ) {
 

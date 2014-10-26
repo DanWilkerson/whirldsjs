@@ -1,11 +1,35 @@
-<div class='row' ng-controller='selectCoordsController'>
+<div ng-controller="selectCoordsController" style="position:absolute;top:0px;left:0px;right:0px;bottom:0px;">
 
-  <div class='column-12' style='height:600px'>
+  <div class='row text-center'>
 
-    <google-map></google-map>
+    <span class='text-logo'>
+
+      whirlds
+
+    </span>
 
   </div>
-  <div class='wjs-start-button-container' ng-show='url.lat > 1'>
-    <a class='wjs-start-button' ng-href='#/whirld/{{url.lat}},{{url.lng}}/{{url.radius}}'>Start</a>
+
+  <div class="row">
+
+    <div class="whirld-container">
+
+      <google-map></google-map>
+
+    </div>
+  
   </div>
+
+  <div class="button-container" ng-show="url.lat > 1">
+
+    <a class="button" ng-href="#/whirld/{{url.lat}},{{url.lng}}/{{url.radius}}">Start</a>
+
+  </div>
+
+  <div class='row text-center footer-links'>
+
+    By <a href="http://www.danwilkerson.com">Dan Wilkerson</a> with patient guidance and advice from <a href="https://twitter.com/tbloncar">Travis Loncar</a>
+
+  </div>
+
 </div> 

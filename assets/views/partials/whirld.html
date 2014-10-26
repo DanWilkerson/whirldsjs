@@ -1,5 +1,42 @@
-<div class='whirld-container'>
-  <div ng-repeat="image in images" ng-show="image.visible">
-    <img ng-src="{{image.src}}" />
+<div class="container">
+
+  <div class='row text-center'>
+
+    <span class='text-logo'>
+
+      whirlds
+
+    </span>
+
   </div>
+
+  <div class='row whirld-container'>
+
+    <div ng-repeat="image in images" ng-show="image.visible" class='whirld-image-container'>
+
+      <!-- <img ng-src="{{image.src}}" /> -->
+      <img src='/assets/img/45.jpeg' class='whirld-image' />
+
+    </div>
+
+  </div>
+
+  <div class="row text-center">
+
+    <div class="button-container">
+
+      <a class="button" href="#/">Make Another</a>
+      <!--<a class="button" href="#/">Share This</a>-->
+
+    </div>
+
+  </div>
+
+  <div class='row text-center footer-links'>
+
+    By <a href="http://www.danwilkerson.com">Dan Wilkerson</a> with patient guidance, help, & advice from <a href="https://twitter.com/tbloncar">Travis Loncar</a>
+
+  </div>
+
+
 </div>
