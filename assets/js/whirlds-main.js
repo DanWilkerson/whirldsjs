@@ -76,13 +76,14 @@ whirldsJs.controller( 'selectCoordsController', [ 'getCircleLatLng', '$scope', f
 
         $scope.map.circle.center  = event.latLng;
         var circle                = new google.maps.Circle( $scope.map.circle );
+        var circleCenter          = circle.getCenter().lat();
         $scope.map.circle.binding = circle;
 
         circle.setMap( map );
       
-        $scope.url.lat    = circle.center.k;
-        $scope.url.lng    = circle.center.A;
-        $scope.url.radius = circle.radius;
+        $scope.url.lat    = circle.getCenter().lat();
+        $scope.url.lng    = circle.getCenter().lng();
+        $scope.url.radius = circle.getRadius();
 
         $scope.$apply();
 
@@ -90,9 +91,9 @@ whirldsJs.controller( 'selectCoordsController', [ 'getCircleLatLng', '$scope', f
 
           var circle  = this;
       
-          $scope.url.lat    = circle.center.k;
-          $scope.url.lng    = circle.center.A;
-          $scope.url.radius = circle.radius;
+          $scope.url.lat    = circle.getCenter().lat();
+          $scope.url.lng    = circle.getCenter().lng();
+          $scope.url.radius = circle.getRadius();
 
           $scope.$apply();
 
@@ -154,11 +155,10 @@ whirldsJs.factory( 'getCircleLatLng', function() {
         var point = new google.maps.LatLng( center.lat, center.lng );
 
         var offset = google.maps.geometry.spherical.computeOffset( point, radius, angle );
-
         var latLngCoords = {
 
-          lat   : offset.k,
-          lng   : offset.A,
+          lat   : offset.lat(),
+          lng   : offset.lng(),
           angle : angle,
           number: i
 
